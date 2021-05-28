@@ -12,18 +12,6 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 # Inserted includes.
 from azureml.core import Dataset
 from azureml.data.datapath import DataPath
-# TODO: Create TabularDataset using 
-# Data is located at:
-datastore_path = 'https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv'
-ds = Dataset.Tabular.from_delimited_files(path=datastore_path)
-
-x, y = clean_data(ds)
-
-# TODO: Split data into train and test sets.
-### YOUR CODE HERE ###
-x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.2)
-
-run = Run.get_context() # Gets the context to make experiments on Azure Machine Learning
 
 def clean_data(data):
     # Dict for cleaning data
@@ -50,7 +38,20 @@ def clean_data(data):
     x_df["poutcome"] = x_df.poutcome.apply(lambda s: 1 if s == "success" else 0)
 
     y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
-    
+
+
+# TODO: Create TabularDataset using 
+# Data is located at:
+datastore_path = 'https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv'
+ds = Dataset.Tabular.from_delimited_files(path=datastore_path)
+
+x, y = clean_data(ds)
+
+# TODO: Split data into train and test sets.
+### YOUR CODE HERE ###
+x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.2)
+
+run = Run.get_context() # Gets the context to make experiments on Azure Machine Learning
 
 def main():
     # Add arguments to script
