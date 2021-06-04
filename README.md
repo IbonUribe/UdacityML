@@ -22,11 +22,15 @@ There is just one data source and it comes in a file with fields separated by co
 
 2. Transforming data.
 
-Function to "clean" data makes use of Panda's library
+Function to "clean" data makes use of Panda's library in a process that basically transforms string type values into binary data; one hot encoding.
+
+3. Loading data.
+
+Splits data into train and test sets. Train set consists on the 80% of the whole set and is used so the  ML algorithm can "learn" and the other 20% that belongs to test data is used to check whether the model is well fitted.
 
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
-
+In this case, a linear logistic regression algorithm from sklearn-scikit package is used in order to try fitting to the nature of the data. Two parameters are provided as hyperparameters, strenght (--C) and max number of iterations (--max_iter) and afecter
 
 **What are the benefits of the parameter sampler you chose?**
 
