@@ -46,7 +46,7 @@ In the case of AutoML model, data comes without splitting it into train and test
 
 In both cases VotingEnsemble performed better, using LightGBM, XGBoostClassifier (twice), LogisticRegression, GradientBoosting and RandomForest algorithms ensemble with these weights 0.2222222222 0.2222222222 0.111111111111 0.111111111111 0.111111111111 0.2222222222
 
-![Best Performance](Best performance AutoML.png)
+![Best performance AutoML](https://user-images.githubusercontent.com/69908503/120907270-72326f00-c660-11eb-8de0-a7828a2ccfaa.png)
 
 ## Pipeline comparison
 **Compare the two models and their performance. What are the differences in accuracy? In architecture? If there was a difference, why do you think there was one?**
@@ -55,3 +55,5 @@ In this case, the results were almost the same, with a slight difference in favo
 ## Future work
 **What are some areas of improvement for future experiments? Why might these improvements help the model?**
 The first area of improvement is going further with the kind of algorithms to use and employ neural nets to get higher precision for this kind of data and needs. Another clear area of improvement is getting a more balanced data, those who made a deposit represented almost one tenth of the total. Other improvement areas are different combinations of parameter sampling, such Grid Parameter Sampling that performs a whole parameter space searching to find the optimal tuning. Of course, trying fitting different classification solvers could help improving accuracy. In fact, AutoML has chosen Voting Ensemble as the algorithm with highest accuracy, note that this algorithm uses a mix of techniques denoting that might not exist a unique approach to improve learning given training data. So logistic regression model might not be the best. As SKLearn estimator is deprecated, moving on to use ScriptRunConfig seems to be a reasonable improvement too.
+
+![Class balancing detection](https://user-images.githubusercontent.com/69908503/120907281-85ddd580-c660-11eb-81c5-76449173e7a0.png)
