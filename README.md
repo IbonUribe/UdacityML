@@ -30,7 +30,9 @@ Splits data into train and test sets. Train set consists on the 80% of the whole
 
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
-In this case, a linear logistic regression algorithm from sklearn-scikit package is used in order to try fitting to the nature of the data. Two parameters are provided as hyperparameters, strenght (--C) and max number of iterations (--max_iter) and afecter
+n this case, a linear logistic regression classification algorithm from sklearn-scikit package is used in order to try fitting to the nature of the data aiming to have a model that could make an accurate prediction. Two parameters are provided as hyperparameters, strength (--C) and max number of iterations (--max_iter). The strength refers to the regularization of data that algorithm applies, the lower the value, the stronger becomes the regularization. Regularization is a technique used to reduce the "absorption of noise" by the model and avoiding overfitting, one of the main problems of machine learning. Max number of iterations sets the number of iterations taken for the selected algorithm to converge with the sought goal, 100% accuracy, in this case. Even though logistic regression technique is used, the problem to solve is a classification problem, with labeled data (supervised learning) that relates each sample with its class. We need to predict if a person would like to subscribe to a bank deposit or not. In a regression problem we would need to guess a number, not a class (e.g. houses cost in a region).
+
+There are other algorithms to use such KNN Decision tree, Random Forrest or Gradient boosting that may fit better in other contexts if we follow the cheat-sheet provided by Scikit-Learn (https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html). To decide whether an algorithm works or not, we have to consider it's accuracy in relation with the nature of the problema we are trying to solve. Almost 92% of accuracy might be enough to say the chosen algorithm works for our problem. 
 
 **What are the benefits of the parameter sampler you chose?**
 
